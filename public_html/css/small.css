@@ -1,0 +1,258 @@
+.colors {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    max-width: 400px;
+}
+
+
+.colors > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colors > div > div {
+    height: 50px;
+    width: 50px;
+}
+
+.main-color {
+    background-color: #2f4a7a;
+}
+.secondary-color {
+    background-color: #ffe701;
+}
+.text-color {
+    background-color: #1b223a;  
+}
+.accent-color1 {
+    background-color: #00eaff;
+}
+.accent-color2 {
+    background-color: #ff7d7d;
+}
+.accent-color3 {
+    background-color: #6aff86; 
+}
+.accent-color4 {
+    background-color: #ff00ea; 
+}
+
+
+
+body {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    overflow-x: hidden;    
+}
+
+a {
+    color: #2f4a7a;
+    text-decoration: none;
+
+}
+
+h1 {
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+h2 {
+    font-size: 1.75em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+}
+
+h3 {
+    font-size: 1.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+}
+
+h4 {
+    font-size: 1.25em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+}
+
+p {
+    font-size: 1em;
+}
+
+main {
+    margin: 0 3%;
+}
+
+header {
+    background-image: url('../images/homebg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+
+
+.blue-angle {
+    transform: skewY(-45deg);
+    background-color: #2f4a7a;
+    height: 450px;
+    width: 100%;
+    position: relative;
+    top: 130px;
+    right: 0px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    z-index: 1;
+}
+
+#mobile-menu {
+    position: absolute;
+    left: -40px;
+    top: -40px;
+    padding: 40px;
+    font-size: 30px;
+    border-radius: 100px;
+    z-index: 3;
+    cursor: pointer;
+}
+.flex {
+    display: flex;
+}
+
+.blue-angle .angle-grid >div {
+    transform: skew(0, 45deg) translateY(25%);
+}
+.slogan {
+    color: #6aff86;
+    grid-row: 1;
+    grid-column: 2;
+    flex-direction: column-reverse;
+    align-items: baseline;    
+}
+
+.slogan > h2 {
+    position: relative;
+}
+
+.angle-grid {
+    display: grid;
+    grid-template-columns: auto 200px auto;
+    height: 100%;
+    grid-template-rows: 270px;
+    justify-items: center;
+    width: 80%;
+}
+
+.blue-angle .angle-grid > div> h2 span:first-of-type {
+    margin-left: 10px;
+    color: #ff7d7d;
+}
+.blue-angle .angle-grid > div> h2 span:last-of-type {
+    margin-left: 20px;
+    color: #ff00ea;
+}
+
+#logo {
+    height: 170px;
+}
+
+
+.introText {
+    color: #fff;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-self: end; 
+}
+
+.introText h3,
+.introText h1 {
+    margin: 0;
+}
+
+nav {
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    border-radius: 400px;
+    background-color: #ffe001;
+    top: -120px;
+    left: -150px;
+    height: 0;
+    padding: 101px;
+    width: 0;
+    transition: all 1s ease-in-out;
+}
+
+nav.open {
+    height: 380px;
+    width: 400px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    margin-left: 100px;
+    position: relative;
+    font-size: 40px;
+}
+
+nav ul li a {
+    padding: 15px 0;
+    text-decoration: none;
+    color: #1b223a;    
+}
+
+nav.open ul li a::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    margin-top: 3px;
+    margin-left: -45px;
+    border-radius: 300px;
+    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,.5), 3px 3px 3px 0 rgba(0,0,0,.5);
+}
+
+#home a::before {
+    background-color: #ffe701;
+}
+
+#rentals a::before {
+    background-color: #00eaff;
+}
+
+#tours a::before {
+    background-color: #ff7d7d;
+}
+
+#reservations a::before {
+    background-color: #6aff86;
+}
+
+#contact a::before {
+    background-color: #ff00ea;
+}
+
+
+
+a.reserve-btn {
+    float: right;
+    background-color: #6afc86;
+    padding: 60px 30px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 24px;
+    bottom: -230px;
+    right: 20px;
+    z-index: 5;
+    position: absolute;
+    font-weight: 800;
+    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,.5), 3px 3px 3px 0 rgba(0,0,0,.5);
+    transform: skewY(45deg);
+
+}
