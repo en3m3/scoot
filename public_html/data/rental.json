@@ -1,0 +1,58 @@
+{
+    "scooters":[
+        {
+            "name": "Honda Metro Scooter",
+            "riders": 1, 
+            "rsvHalfDay": "20",
+            "rsvFullDay": "30",
+            "walkinHalfDay": "25",
+            "walkinFullDay": "35"
+        },
+        {
+            "name": "Honda Dio Scooter",
+            "riders": 2, 
+            "rsvHalfDay": "30",
+            "rsvFullDay": "40",
+            "walkinHalfDay": "35",
+            "walkinFullDay": "45"
+        },        
+        {
+            "name": "Honda PCX150 Scooter",
+            "riders": 2, 
+            "rsvHalfDay": "40",
+            "rsvFullDay": "50",
+            "walkinHalfDay": "45",
+            "walkinFullDay": "55"
+        }
+  
+    ],
+    "atvs":[
+        {
+            "name": "Honda Pioneer ATV",
+            "riders": 4, 
+            "rsvHalfDay": "50",
+            "rsvFullDay": "70",
+            "walkinHalfDay": "60",
+            "walkinFullDay": "80"
+        }      
+    ],
+    "jeeps":[
+        {
+            "name": "Jeep Wrangler, 2 Door",
+            "riders": 4, 
+            "rsvHalfDay": "60",
+            "rsvFullDay": "85",
+            "walkinHalfDay": "70",
+            "walkinFullDay": "90"
+        },
+        {
+            "name": "Jeep Wrangler, 4 Door + A/C",
+            "riders": 5, 
+            "rsvHalfDay": "70",
+            "rsvFullDay": "100",
+            "walkinHalfDay": "85",
+            "walkinFullDay": "125"
+        }
+        
+    ]
+}

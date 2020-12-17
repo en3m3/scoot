@@ -1,4 +1,94 @@
-@media only screen and (min-width: 800px) {  
-    
+@media only screen and (min-width: 700px) {  
+    .introText {
+        max-width: 300px;
+        font-size: 14px;
+    }  
+    nav {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    #mobile-menu {
+        display: none;
+    }
+    nav#nav ul li a::before {
+        border-radius: 0;
+        width: 80px;
+        height: 49px;
+        /* clip-path: polygon(0 78%, 100% 0, 100% 100%, 0 100%); */
+        box-shadow: none;
+        transform: skewY(35deg) translateX(-30px) translateY(-10px);
+    }
+
+    nav#nav {
+        height: 380px;
+        width: 400px;
+        margin-left: 50px;
+    }    
+
+    nav#nav ul {
+        margin-left: 40px;
+    }
+
+    header {
+        margin-bottom: 0;
+        padding-bottom: 380px;;        
+    }
+
+    #weather-forecast {
+        display: flex;
+    }
+
+    .forecast-day:first-child {
+        left: 220px;
+    }   
+    #rentals-section .rental-group:nth-of-type(odd) img{
+        max-width: 400px;
+        top: -80px;
+        left: 10px;
+    }    
+    #rentals-section .rental-group:nth-of-type(even) img{
+        max-width: 400px;
+        top: -80px;
+        left: unset;
+        right: 10px;
+    }       
+
+    #rentals-section .blue-banner {
+        width: 700px;
+        background-color: #2f4a7a;
+        padding: 15px 0 40px 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 0 7px 5px #000;
+    }
+
+    #rentals-section .rental-group:nth-of-type(odd) .blue-banner {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    #rentals-section .rental-group:nth-of-type(even) .blue-banner {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        margin: 0 0 0 auto;
+        
+    }    
+    .tour main img {
+        max-width: 400px;
+        float: left;
+        margin: 15px 0;
+    }    
+    .blue-angle {
+        font-size: 16px;
+    }
+
+    .blue-angle h1 {
+        top: 0;
+        left: 0;
+        font-size: 30px;
+        transform: skewY(0deg);
+    }
 
 }

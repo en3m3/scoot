@@ -1,4 +1,98 @@
-@media only screen and (min-width: 1230px) {
+@media only screen and (min-width: 1200px) {
+    .angle-grid {
+        justify-items: end;
+        width: 1800px;
+        font-size: 28px;
+        grid-template-rows: 180px;
+    }
+   
+    .reserve-btn + p {
+        right: 255px;
+        transform: skewY(15deg);
+        bottom: -160px;
+        max-width: 400px;   
 
+    }
+
+    .blue-angle {
+        transform: skewY(-15deg);
+        top: 340px;
+        height: 200px;     
+    }    
+    a.reserve-btn {
+        transform: skewY(15deg);
+        right: 90px;
+    }    
+    .blue-angle .angle-grid >div {
+        transform: skew(0, 15deg) translateY(25%);
+    }  
+    header {
+        background-image: url('../images/homebg1920.jpg');
+        padding-bottom: 300px;
+    }
   
+    .forecast-day:first-child {
+        left: unset;
+        right: 50px;
+    }
+
+    #rentals-section {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1500px;
+        margin: auto;        
+    }
+
+    .rental-group {
+        width: 30%;
+    }
+
+    #rentals-section .rental-group:nth-of-type(odd) .blue-banner, 
+    #rentals-section .rental-group:nth-of-type(even) .blue-banner {
+        border-radius: 0;
+        width: 100%;
+        box-shadow: none;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        
+    }    
+
+    .rental-content {
+        z-index: 1;
+        position: relative;
+        padding: 50px;
+        margin: 0;
+        color: #fff;
+        background: rgb(47,74,122);
+        background: linear-gradient(180deg, rgba(47,74,122,1) 0%, rgba(47,74,122,1) 80%, rgba(0,212,255,0) 100%);        
+    }    
+
+    #rentals-section .rental-group:nth-of-type(odd) img, 
+    #rentals-section .rental-group:nth-of-type(even) img {
+        z-index:2;
+    }
+    #rentals-section .rental-group h2 {
+        z-index: 3;
+    }
+
+    .blue-angle h1 {
+        transform: skewY(15deg);
+        top: 300px;
+        left: -200px;
+    }    
+
+    .introText {
+        max-width: 470px;
+        font-size: 16px;
+    }
+
+    .introText h1 {
+        transform: skewY(0);
+        top: 0;
+        left: 0;      
+    }
+    .forecast-day {
+        max-width: none;
+        min-width: 300px;
+    }
 }

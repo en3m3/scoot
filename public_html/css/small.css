@@ -16,6 +16,10 @@
     width: 50px;
 }
 
+.center {
+    text-align: center;
+}
+
 .main-color {
     background-color: #2f4a7a;
 }
@@ -38,7 +42,11 @@
     background-color: #ff00ea; 
 }
 
-
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 body {
     font-size: 14px;
@@ -55,22 +63,23 @@ a {
 
 h1 {
     font-size: 2em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h2 {
     font-size: 1.75em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
 }
 
 h3 {
     font-size: 1.5em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;    
 }
 
 h4 {
     font-size: 1.25em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
 }
 
 p {
@@ -78,7 +87,8 @@ p {
 }
 
 main {
-    margin: 0 3%;
+    margin: 0;
+    padding-bottom: 50px;
 }
 
 header {
@@ -86,14 +96,13 @@ header {
     background-size: cover;
     background-position: center;
     height: 80vh;
+    margin-bottom: 350px;
 }
-
-
 
 .blue-angle {
     transform: skewY(-45deg);
     background-color: #2f4a7a;
-    height: 450px;
+    height: 400px;
     width: 100%;
     position: relative;
     top: 130px;
@@ -104,6 +113,8 @@ header {
     align-items: center;
     left: 0;
     z-index: 1;
+    box-shadow: 0 5px 11px 8px #000000, inset 0 0px 20px 0px #000000;
+    font-size: 12px;
 }
 
 #mobile-menu {
@@ -131,13 +142,18 @@ header {
     align-items: baseline;    
 }
 
-.slogan > h2 {
-    position: relative;
+.blue-banner h2 {
+    text-align: center;
+    color: #fff;
+}
+.blue-banner .slogan h2 {
+    color: #6aff86;
+    text-align: left;
 }
 
 .angle-grid {
     display: grid;
-    grid-template-columns: auto 200px auto;
+    grid-template-columns: minmax(100px,auto) 200px auto;
     height: 100%;
     grid-template-rows: 270px;
     justify-items: center;
@@ -155,6 +171,7 @@ header {
 
 #logo {
     height: 170px;
+    filter: drop-shadow(2px 2px 6px black);
 }
 
 
@@ -170,6 +187,13 @@ header {
     margin: 0;
 }
 
+.blue-angle h1 {
+    transform: skewY(45deg);
+    top: 330px;
+    left: -100px;
+    position: relative;
+}
+
 nav {
     overflow: hidden;
     position: absolute;
@@ -179,14 +203,20 @@ nav {
     top: -120px;
     left: -150px;
     height: 0;
-    padding: 101px;
+    padding: 97px;
     width: 0;
     transition: all 1s ease-in-out;
+    box-shadow: 0 0 20px 3px #000;
 }
 
 nav.open {
     height: 380px;
     width: 400px;
+    position: absolute;
+    left: -70px;
+    top: -50px;
+    padding: 0;
+    overflow: visible;
 }
 
 nav ul {
@@ -207,15 +237,31 @@ nav ul li a {
     color: #1b223a;    
 }
 
-nav.open ul li a::before {
+nav ul li a::before {
     position: absolute;
+    z-index: 1000000;
     content: "";
     height: 40px;
     width: 40px;
-    margin-top: 3px;
-    margin-left: -45px;
+    left: -10px;
+    margin-top: 2px;
+    margin-left: 0;
     border-radius: 300px;
-    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,.5), 3px 3px 3px 0 rgba(0,0,0,.5);
+    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,.9), 3px 3px 3px 0 rgba(0,0,0,.9);
+}
+
+nav#nav ul li a:hover::before {
+    box-shadow: 0 0 10px 3px #fff, inset 0 0 10px 2px #fff;
+
+}
+
+nav#nav ul li.active a::before {
+    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,.9), 3px 3px 3px 0 rgba(0,0,0,.9), 0 0 20px 7px #fff, inset 0 0 13px 3px #fff;
+}
+
+
+li.active a::before {
+    box-shadow: 0 0 0 10px #fff;
 }
 
 #home a::before {
@@ -243,7 +289,7 @@ nav.open ul li a::before {
 a.reserve-btn {
     float: right;
     background-color: #6afc86;
-    padding: 60px 30px;
+    padding: 50px 30px;
     border-radius: 100px;
     text-align: center;
     font-size: 24px;
@@ -252,7 +298,333 @@ a.reserve-btn {
     z-index: 5;
     position: absolute;
     font-weight: 800;
-    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,.5), 3px 3px 3px 0 rgba(0,0,0,.5);
+    box-shadow: inset -2px -2px 11px 0px rgba(0,0,0,1), 3px 3px 3px 0 rgba(0,0,0,1);
     transform: skewY(45deg);
+    text-shadow: 0 0 12px #fff;
+    color: #000;
+}
 
+a.reserve-btn:hover {
+    filter:sepia(.7);
+}
+
+.forecast-day {
+    max-width: 250px;
+    margin: 50px auto;
+    padding: 5px 5px 15px;
+    box-shadow: 0 0 5px 1px #000;
+    outline: 1px solid #000;
+    display: grid;
+    grid-template: 30px 20px 90px 20px 20px/ 1fr 1fr;
+    font-size: 20px;
+    align-items: center;
+    grid-column-gap: 15px;
+    color: #fff;
+    background-color: #ff7d7d;
+    box-shadow: inset 0 0 8px 3px rgba(0,0,0,0.5), 0 0 10px 5px rgba(0,0,0,0.5);    
+}
+
+.forecast-day p {
+    margin: 0;
+
+}
+
+.forecast-day:first-child {
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    left: 50px;
+    font-size: 16px;
+    min-width: 220px;
+    background-color: #ffffffaa;
+    color: #000000;  
+}
+
+
+.forecast-day img {
+    background: #fff;
+    border-radius: 40px;
+    padding: 3px;  
+    filter: drop-shadow(3px 3px 5px black);
+
+}
+
+.forecast-day:first-child img {
+    background: #ff7d7d;
+    border-radius: 40px;
+    padding: 3px;  
+
+}
+
+
+.day-of-week {
+    text-align: center;
+    font-size: 25px;
+    grid-column: 1/3;
+}
+
+.forecast-date {
+    grid-column: 1/3;
+    justify-self: center;
+}
+
+.weather {
+    justify-self: end;
+    text-transform: capitalize;
+    text-align: right;
+}
+
+.weather::after {
+    content: ":";
+}
+
+.temp-label {
+    justify-self: end;
+}
+
+.humidity-label {
+    justify-self: end;
+}
+
+#rentals-section .blue-banner {
+    width: 100%;
+    background-color: #2f4a7a;
+    padding: 15px 0 40px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 7px 5px #000;
+}
+
+#rentals-section .blue-banner img {
+    max-width: 200px;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+.blue-banner h2 {
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    z-index: 2;
+}
+
+footer .locations .address {
+    color: #fff;
+    float: left;
+    max-width: 300px;
+    margin: 15px 30px;
+}
+
+footer .locations {
+    display: flex;
+    justify-content: center;
+}
+
+.rental-content {
+    margin: 60px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rental-group td {
+    border: 1px solid #000;
+    padding: 5px .25%;
+}
+
+footer .locations .address:nth-of-type(2) {
+    text-align: right;
+    float: right;
+}
+
+footer {
+    background-color: #2f4a7a;
+    color: #fff;
+    padding: 30px 0;    
+    box-shadow: 0 0 11px 8px #000;   
+}
+
+footer a {
+    color: #fff; 
+}
+
+.social-media {
+    text-align: center;
+    padding: 15px 0;  
+    border-top: 15px groove #00eaff;
+
+}
+
+.social-media a {
+    margin: 0 5px;
+}
+
+.social-media a img {
+    filter: brightness(1) sepia(0) saturate(1);
+    box-shadow: 0 0 0 0 #fff;
+    transform: scale(1);    
+    transition: all 1.5s;
+}
+
+.social-media a:hover img {
+    filter: brightness(2) sepia(.3) saturate(5);
+    box-shadow: 0 0 8px 1px #fff;
+    transform: scale(1.1);
+}
+
+.footer-links {
+    text-align: center;    
+}
+
+.map-section     {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.map-section iframe {
+    width: 100%;
+    margin: 15px;
+}
+
+#weatherAlert {
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffe001;
+    z-index: 10;
+    color: #00e9fe;
+    font-weight: 800;
+    text-align: center;
+    border-bottom: 5px groove #00e9fe;
+    -webkit-text-stroke: 1px #000;
+    font-size: 22px;
+}
+
+.weatherAlertX {
+    float: right;
+    margin-right: 15px;
+    background-color: #000;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 1px solid #00e9fe;
+    top: 5px;
+    right: 15px;
+    position: absolute;
+    cursor: pointer;   
+}
+
+.rental-content > ul > li {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.rental-content ul {
+    list-style: none;
+    width: 85%;
+    text-align: left;
+}
+
+ul ul li {
+    font-size: 18px;
+}
+
+form label, form select, form p, form input, form button, form textarea
+ {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    padding: 5px;
+    font-weight: 600;
+
+}
+
+form button {
+    background-color: #6aff85;
+    padding: 12px 10px 0;
+    border-radius: 200px;
+    height: 50px;
+    font-size: 18px;
+    border: 2px solid #000;
+    box-shadow: inset -2px -1px 9px 1px #000, 5px 4px 8px 2px #000;
+    cursor: pointer;
+}
+
+form input[type="date"] {
+    flex-direction: row;
+}
+
+form p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.radio-row {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+form input[type="radio"] {
+    margin: auto;
+}
+
+.tour main img {
+    width: 100%;
+    border-top: 7px solid #00eaff;
+    border-bottom: 7px solid #00eaff;
+    box-shadow: 0 0 3px 1px #000;
+}
+
+.tour main ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 12px;    
+}
+
+.tour main ul li{
+    width: 45%;
+    margin: 0 5px;
+}
+
+.tour main h2 {
+    text-align: center;
+}
+
+li.no-bullet {
+    visibility: hidden;
+}
+
+.reserve-btn + p {
+    transform: skewY(45deg);
+    position: absolute;
+    bottom: -300px;
+    right: 15px;
+    text-align: right;
+    max-width: 300px;
+    font-size: 18px;
+}
+
+#copyright {
+    text-align: center;
+}
+
+.privacy main {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="" name="author">
+    <meta content="Sherman Peak Weather" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/small.css" rel="stylesheet">
+    <link href="css/medium.css" rel="stylesheet">
+    <link href="css/large.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="reservation">
+<header><!-- loaded by js --></header>
+<main>
+    <h2>Request Rental Reservation</h2>
+
+    <form action="thanks.html" method="GET">
+    <label>Name:<input type="text" id="name" required></label>
+    <label>Pickup:<input type="date" id="pickup" required></label>
+    <label>Drop-Off:<input type="date" id="dropoff" required></label>
+    <label>Type of Rental:
+    <select id="rentaltype" required>
+        <option value="">Please Choose an Option</option>
+        <option value="" class="dropdown-group" disabled>----Scooters----</option>        
+        <option value="Metro">Honda Metro</option>
+        <option value="Dio">Honda Dio</option>
+        <option value="PCX150">Honda PCX150</option>
+        <option value="" class="dropdown-group" disabled>----ATV----</option>        
+        <option value="Pioneer">Honda Pioneer</option>
+        <option value="" class="dropdown-group" disabled>----Jeep----</option>        
+        <option value="Jeep2door">Jeep Wrangler, 2 Door</option>
+        <option value="Jeep4door">Jeep Wrangler, 4 Door</option>
+    </select>
+    </label>
+    <label>Email:<input type="email" id="email" required></label>
+    <label>Phone:<input type="number" id="phone" required></label>
+    <label>Cruise Line:<input type="text" id="cruiseline"></label>
+    <p>Drop-Off Location</p>
+    <div class="radio-row">
+        <label>Terminal Puerta Maya<input type="radio" name="dropOffLocation" value="PuertaMaya"></label>
+        <label>Playa del Carmen-Cozumel<input type="radio" name="dropOffLocation" value="CarmenCozumel"></label>
+    </div>
+    <label>Special Accommodations<textarea id="accommodations"></textarea></label>
+<button type="submit">Request Reservation</button>
+</form>
+</main>
+<footer><!-- loaded by js --></footer>
+<script src="js/partloader.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
